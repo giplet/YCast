@@ -33,7 +33,7 @@ class Station:
         self.votes = get_json_attr(station_json, 'votes')
         self.codec = get_json_attr(station_json, 'codec')
         self.bitrate = get_json_attr(station_json, 'bitrate')
-        logging.debug("%s : %s", self.id, self.name)
+        logging.debug("%s : %s, %s", self.id, self.name, self.url)
 
     def to_vtuner(self):
         return vtuner.Station(self.id, self.name, ', '.join(self.tags), self.url, self.icon,
