@@ -117,6 +117,10 @@ def vtuner_redirect(url):
                         "Some AVRs have problems with this. The requested host was: %s", request.host)
     return redirect(url, code=302)
 
+@app.before_request
+def log_request():
+    logging.DEBUG("URL: %s", request.url)
+    return None
 
 @app.route('/setupapp/<path:path>',
            methods=['GET', 'POST'])
