@@ -119,7 +119,7 @@ def vtuner_redirect(url):
 
 @app.before_request
 def log_request():
-    logging.DEBUG("URL: %s", request.url)
+    logging.debug("URL: %s", request.url)
     return None
 
 @app.route('/setupapp/<path:path>',
